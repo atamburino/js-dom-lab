@@ -34,3 +34,14 @@ const highlightBtn = document.getElementById('highlight-title-btn');
 highlightBtn.addEventListener('click', function() {
   mainTitle.classList.toggle('highlight');
 });
+
+
+// Function -- updates the footer with today's date
+function updateFooter() {
+    const footer = document.getElementById('footer-text');
+    const today = new Date().toLocaleDateString();
+    footer.textContent = `DOM Manipulation Lab © ${today}`;
+  }
+  
+  // invokes the function whe the page loads -- Updates the footer
+  updateFooter();
