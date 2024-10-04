@@ -20,3 +20,17 @@ newItem.textContent = 'Newly added item';
 // Append new item to list
 const itemList = document.getElementById('item-list');
 itemList.appendChild(newItem);
+
+
+// Fuction to add a new item to the list when the button is clicked
+const addItemBtn = document.getElementById('add-item-btn');
+addItemBtn.addEventListener('click', function() {
+    const newItem = document.createElement('li');
+    newItem.textContent = "Another new item";
+    itemList.appendChild(newItem);
+});
+
+const highlightBtn = document.getElementById('highlight-title-btn');
+highlightBtn.addEventListener('click', function() {
+  mainTitle.classList.toggle('highlight');
+});
