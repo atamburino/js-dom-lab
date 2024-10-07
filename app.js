@@ -27,6 +27,7 @@ const addItemBtn = document.getElementById('add-item-btn');
 addItemBtn.addEventListener('click', function() {
     const newItem = document.createElement('li');
     newItem.textContent = "Another new item";
+    newItem.style.color = 'blue';
     itemList.appendChild(newItem);
 });
 
