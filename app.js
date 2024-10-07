@@ -53,3 +53,19 @@ function updateFooter() {
   
   // invokes the function whe the page loads -- Updates the footer
   updateFooter();
+
+// New elements for custom item submission
+const newItemInput = document.getElementById('new-item-input');
+const submitNewItemBtn = document.getElementById('submit-new-item-btn');
+
+// Event listener for submitting custom items
+submitNewItemBtn.addEventListener('click', function() {
+    const newItemText = newItemInput.value.trim();
+    if (newItemText) {
+        const newItem = document.createElement('li');
+        newItem.textContent = newItemText;
+        newItem.style.color = 'green';
+        itemList.appendChild(newItem);
+        newItemInput.value = '';
+    }
+});
