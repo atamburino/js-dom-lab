@@ -37,6 +37,13 @@ highlightBtn.addEventListener('click', function() {
 });
 
 
+const removeItemBtn = document.getElementById('remove-item-btn');
+removeItemBtn.addEventListener('click', function() {
+    if (itemList.lastElementChild) {
+        itemList.removeChild(itemList.lastElementChild);
+    }
+});
+
 // Function -- updates the footer with today's date
 function updateFooter() {
     const footer = document.getElementById('footer-text');
