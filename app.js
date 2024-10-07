@@ -69,3 +69,16 @@ submitNewItemBtn.addEventListener('click', function() {
         newItemInput.value = '';
     }
 });
+
+function getRandomColor() {
+  return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+
+const colorBoxes = document.querySelectorAll('.color-box');
+const changeColorsBtn = document.getElementById('change-colors-btn');
+
+changeColorsBtn.addEventListener('click', function() {
+  colorBoxes.forEach(box => {
+    box.style.backgroundColor = getRandomColor();
+  });
+});
