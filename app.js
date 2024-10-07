@@ -27,6 +27,7 @@ const addItemBtn = document.getElementById('add-item-btn');
 addItemBtn.addEventListener('click', function() {
     const newItem = document.createElement('li');
     newItem.textContent = "Another new item";
+    newItem.style.color = 'blue';
     itemList.appendChild(newItem);
 });
 
@@ -35,6 +36,13 @@ highlightBtn.addEventListener('click', function() {
   mainTitle.classList.toggle('highlight');
 });
 
+
+const removeItemBtn = document.getElementById('remove-item-btn');
+removeItemBtn.addEventListener('click', function() {
+    if (itemList.lastElementChild) {
+        itemList.removeChild(itemList.lastElementChild);
+    }
+});
 
 // Function -- updates the footer with today's date
 function updateFooter() {
@@ -45,3 +53,32 @@ function updateFooter() {
   
   // invokes the function whe the page loads -- Updates the footer
   updateFooter();
+
+// New elements for custom item submission
+const newItemInput = document.getElementById('new-item-input');
+const submitNewItemBtn = document.getElementById('submit-new-item-btn');
+
+// Event listener for submitting custom items
+submitNewItemBtn.addEventListener('click', function() {
+    const newItemText = newItemInput.value.trim();
+    if (newItemText) {
+        const newItem = document.createElement('li');
+        newItem.textContent = newItemText;
+        newItem.style.color = 'green';
+        itemList.appendChild(newItem);
+        newItemInput.value = '';
+    }
+});
+
+function getRandomColor() {
+  return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+
+const colorBoxes = document.querySelectorAll('.color-box');
+const changeColorsBtn = document.getElementById('change-colors-btn');
+
+changeColorsBtn.addEventListener('click', function() {
+  colorBoxes.forEach(box => {
+    box.style.backgroundColor = getRandomColor();
+  });
+});
